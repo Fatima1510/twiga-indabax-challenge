@@ -1,148 +1,155 @@
-# 🏆 Research Paper Parsing Competition
+# 🚀 Twiga AI Challenge: Document Processing & RAG System
 
-## Overview
+## 🎯 Overview
 
-This repository contains a Jupyter notebook for optimizing research paper parsing strategies. The goal is to extract structured content from academic research papers using one of three approaches.
+This repository contains two interconnected challenges for building a complete document processing and RAG (Retrieval-Augmented Generation) system for academic research papers.
 
-## Setup
+## 📝 What You'll Build
 
-### Dependencies
+This project is split into two main challenges:
+
+- **Document Parsing**: Convert academic PDFs into clean, structured markdown, preserving academic sections, citations, and logical hierarchy. This prepares your data for downstream AI tasks.
+- **RAG System**: Build a Retrieval-Augmented Generation (RAG) pipeline that uses your parsed documents to answer academic questions with accurate, cited responses.
+
+## 📁 Project Structure
+
+```
+twiga-challenge-1/
+├── README.md                    # This file - Main overview
+├── parsing-challenge/           # Challenge 1: Document Parsing
+│   ├── README.md                # Parsing challenge documentation
+│   └── strategy1_llamaparse_direct.ipynb
+├── rag-challenge/               # Challenge 2: RAG Implementation
+│   ├── README.md                # RAG challenge documentation
+│   └── strategy1_chromadb_basic.ipynb     RAG
+├── data/
+│   ├── papers/                  # Original PDF files
+│   ├── input_papers/            # Parsed markdown files
+│   └── vector_store/            # Vector database storage
+└── LICENSE
+```
+
+## 🏆 Challenge Progression
+
+### Phase 1: Document Parsing
+
+- **Notebook**: `parsing-challenge/strategy1_llamaparse_direct.ipynb`
+- **Goal**: Parse academic PDFs into structured markdown for RAG.
+
+### Phase 2: RAG System
+
+- **Notebook**: `rag-challenge/strategy1_chromadb_basic.ipynb`
+- **Goal**: Build a RAG pipeline for question answering over your parsed documents.
+
+## 🛠️ Setup & Installation
+
+### Prerequisites
 
 ```bash
+# Core dependencies
 pip3 install llama_parse pypdf together pydantic
+
+# RAG dependencies
+pip3 install chromadb sentence-transformers langchain openai
+pip3 install faiss-cpu numpy pandas matplotlib
 ```
 
 ### API Keys Required
 
-- **LlamaParse API**: For Strategy 1 and 3
-- **Together AI API**: For Strategy 2 and 3
+Create a `.env` file in the project root based on `.env.example`:
 
-## Available Strategies
+## 🎮 Getting Started
 
-### Strategy 1: Direct LlamaParse
+### Phase 1: Document Parsing (Required First)
 
-- **Philosophy**: Use LlamaParse's built-in AI for direct PDF → structured content
-- **Strengths**: High accuracy, handles complex layouts well
-- **Optimization Areas**: System prompts, result types, post-processing
+1. Navigate to `parsing-challenge/`
+2. Open `strategy1_llamaparse_direct.ipynb`
+3. Set up API keys and dependencies
+4. Parse your research paper(s)
+5. Validate output quality
 
-### Strategy 2: Raw PDF + AI Structuring
+### Phase 2: RAG System (After Phase 1)
 
-- **Philosophy**: Extract raw text with pypdf, then use AI to structure it
-- **Strengths**: Full control over extraction and structuring
-- **Optimization Areas**: Text extraction, AI prompts, chunking logic
+1. Navigate to `rag-challenge/`
+2. Open `strategy1_chromadb_basic.ipynb`
+3. Set up API keys and dependencies
+4. Use parsed markdown from Phase 1
+5. Test with academic questions
 
-### Strategy 3: Hybrid LlamaParse + AI
+## 📊 Available Research Papers
 
-- **Philosophy**: Combine LlamaParse parsing with additional AI structuring
-- **Strengths**: Best of both worlds - quality parsing + custom structuring
-- **Optimization Areas**: Integration logic, dual-stage prompting, output merging
+- **Mobile-Based_Deep_Learning_Models_for_Banana_Disease.pdf** - Deep learning for banana disease detection
+- **Examining_the_Awareness_of_Mobile_Money_Users_on_S.pdf** - Mobile money user awareness study
+- **Practical Machine Learning_25_05_04_14_32_34.pdf** - Practical machine learning applications
 
-## Competition Rules
+Both papers contain rich academic content including:
 
-1. Choose ONE strategy to optimize
-2. Process both available papers successfully:
-   - `30YearsResearchGate.pdf`
-   - `SchenkBekkerSchmitt2025PrecRes.pdf`
-3. Document your optimizations and reasoning
-4. Submit working code with performance improvements
+- Complex figures and tables
+- Mathematical equations
+- Extensive citations and references
+- Multi-level section hierarchies
 
-## Evaluation Criteria
+## 🏅 Evaluation Criteria
 
-1. **Content Accuracy** (25%) - Text extraction quality
-2. **Structure Preservation** (25%) - Academic section identification
-3. **Figure/Table Detection** (20%) - Visual element handling
-4. **Citation Handling** (15%) - Reference preservation
-5. **Chunk Quality** (15%) - Logical segmentation
+### Parsing Challenge (Phase 1)
 
-## File Structure
+- **Content Accuracy** (25%) - Text extraction quality
+- **Structure Preservation** (25%) - Academic section identification
+- **Figure/Table Detection** (20%) - Visual element handling
+- **Citation Handling** (15%) - Reference preservation
+- **Chunk Quality** (15%) - Logical segmentation
 
-```
-├── llamaparse_test.ipynb    # Main competition notebook
-├── data/
-│   ├── papers/             # Input PDF files
-│   └── input_papers/       # Processed output files
-└── README.md              # This file
-```
+### RAG Challenge (Phase 2)
 
-## Getting Started
+- **Retrieval Accuracy** (30%) - Relevant chunk identification
+- **Answer Quality** (25%) - Generated response accuracy
+- **Context Preservation** (20%) - Academic context maintenance
+- **System Performance** (15%) - Query response time
+- **User Experience** (10%) - Interface and usability
 
-1. Open `llamaparse_test.ipynb`
-2. Set up your API keys
-3. Choose your strategy (1, 2, or 3)
-4. Run the baseline implementation
-5. Implement your optimizations
-6. Test with both papers
-7. Document your results
+## 🚦 Success Metrics
 
-## Tips for Success
+### Phase 1 Completion Criteria:
 
-### Quick Wins (5-10 minutes):
+✅ Successfully parse all research papers  
+✅ Generate clean, structured markdown output  
+✅ Preserve academic formatting and citations  
+✅ Create logical, RAG-ready text chunks
 
-- Adjust temperature for consistency/creativity
-- Increase max_tokens for longer responses
-- Add stop sequences to prevent repetition
-- Filter too-short or too-long chunks
+### Phase 2 Completion Criteria:
 
-### Medium Effort (30-60 minutes):
+✅ Build functional vector database from parsed content  
+✅ Implement semantic search capabilities  
+✅ Generate accurate, contextual answers  
+✅ Handle complex academic queries effectively
 
-- Custom prompt engineering for academic content
-- Post-processing filters for content enhancement
-- Section-specific handling (abstracts vs references)
-- Quality validation and scoring
+## 💡 Tips for Success
 
-### High Impact (2-4 hours):
+### For Parsing Challenge:
 
-- Multi-stage processing pipelines
-- Ensemble methods combining approaches
-- Advanced PDF libraries (pdfplumber, PyMuPDF)
-- Custom academic structure detection
+- Focus on academic structure preservation
+- Test different prompt engineering approaches
+- Validate output against source PDFs
+- Optimize for downstream RAG usage
 
-## Common Optimization Areas
+### For RAG Challenge:
 
-### LlamaParse Parameters:
+- Experiment with chunk size and overlap
+- Try different embedding models
+- Implement query expansion techniques
+- Focus on citation preservation in responses
 
-```python
-parser = LlamaParse(
-    result_type="markdown",     # Try: "text", "markdown", "json"
-    system_prompt=prompt,       # Academic-specific prompts
-    language="en",             # Language settings
-    verbose=True,              # Output control
-    num_workers=4,             # Parallel processing
-)
-```
+## 🎯 Next Steps
 
-### AI Model Parameters:
+1. **Start with Phase 1**: Open the parsing notebook and process your PDFs
+2. **Move to Phase 2**: Open the RAG notebook and build your Q&A system
+3. **Test end-to-end** with academic questions
 
-```python
-together.chat.completions.create(
-    model="meta-llama/Llama-3.3-70B-Instruct-Turbo",
-    temperature=0.1,           # 0.0-1.0 for creativity vs precision
-    max_tokens=4000,           # Adjust based on paper length
-    top_p=0.9,                # Response diversity
-)
-```
+## 📞 Support
 
-### Quality Assessment:
+- Check individual challenge READMEs for detailed instructions
+- Review baseline implementations before optimizing
+- Test incrementally and document your findings
+- Focus on one challenge at a time for best results
 
-- Automatic section type counting
-- Figure/table detection rates
-- Citation preservation checking
-- Content length distribution analysis
-
-## Submission Requirements
-
-1. **Optimized notebook** with clear documentation
-2. **Output files** from processing both papers
-3. **Performance comparison** with baseline
-4. **Brief optimization report** explaining changes
-
-## Support
-
-For questions or issues:
-
-- Check the notebook comments for optimization hints
-- Review the baseline implementations first
-- Test one strategy thoroughly before switching
-- Document what works and what doesn't
-
-Good luck! 🚀
+Ready to build the future of academic document processing? Let's go! 🚀
