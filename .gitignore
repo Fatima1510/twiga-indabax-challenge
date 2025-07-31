@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+*.env
+
+# VSCode settings
+.vscode/
+
+# Data outputs and caches
+data/vector_store/*
+data/input_papers/*.md
+*.sqlite3
+*.db
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python virtual environments
+venv/
+.env/
+
+# Misc
+*.bak
+*.swp
+*.swo
+
+# Ignore results and cache files
+*.json
+*.pickle
+*.pkl
+*.h5
+*.hdf5
+
+# Ignore model weights
+*.pt
+*.ckpt
+*.pth
+
+# Ignore test outputs
+test_outputs/
+
+# Ignore notebook output cells (optional, if using nbstripout)
+*.nbstripout
+
+# Ignore large files
+*.zip
+*.tar.gz
+*.tar
+*.7z
+*.rar
+
+# Ignore user-specific files
+*.local
+*.user
+*.sublime-workspace
+*.sublime-project
+
+# Ignore backup files
+*~
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore Linux system files
+.Trash-*
