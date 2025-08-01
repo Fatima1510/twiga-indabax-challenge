@@ -14,8 +14,10 @@ __pycache__/
 .vscode/
 
 # Data outputs and caches
-data/vector_store/*
-data/input_papers/*.md
+/data/vector_store/*
+!/data/vector_store/.keep
+/data/input_papers/*.md
+!/data/input_papers/.keep
 *.sqlite3
 *.db
 *.log
